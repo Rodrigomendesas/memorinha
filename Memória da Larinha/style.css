@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif /*estudar uma tipologia mais interessante, pro título e pra back das cartas*/
+}
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    background-color: rgba(207, 159, 255, 0.5);
+}
+
+#title{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 10%;
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: rgb(255, 87, 51);
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor:grab; /*achar um ícone fofo*/
+
+}
+
+.card_front,
+.card_back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+    position: absolute;
+    border-radius: 20px;
+    backface-visibility: hidden;
+
+}
+
+.figure {
+
+    max-width: 130px;
+    max-height: 130px;
+}
+
+.card_front {
+    background-color: rgb(255, 87, 51);
+    transform: rotateY(180deg);
+    object-fit:scale-down;
+    padding: 5px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card_back {
+    color: beige;
+    background-color: rgb(255, 87, 51);
+    font-size: 40px;
+    font-weight: bolder;
+
+
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+#game_over {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.80);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    color: bisque;
+    font-size: 30px;
+    /*achar animações para esta tela*/
+}
+
+#restart {
+margin: 20px;
+padding: 10px;
+font-weight: 200;
+border-radius: 10px;
+
+}
+
+#gameBoard {
+    max-width: 700px;
+    display: grid;
+    grid-template:  1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+   
+   
+}
+
+@media only screen and (max-width: 844px){
+    #title{
+        margin-top: 10px;
+        max-width: 300px;
+        position: relative;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        color: rgb(255, 87, 51);
+    }
+
+    #gameBoard {
+        margin-top: 10px;
+        max-width: 600px;
+        display: grid;
+        grid-template:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+        gap: 5px;
+       
+       
+    }   
+
+    .card_back {
+        color: beige;
+        background-color: rgb(255, 87, 51);
+        font-size: 20px;
+        font-weight: bolder;     
+    }
+
+    .card {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+    
+    }
+
+    .card_front,
+    .card_back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+    position: absolute;
+    border-radius: 20px;
+    backface-visibility: hidden;
+
+    }
+
+    .figure {
+
+    max-width: 100px;
+    max-height: 100px;
+    }
+}
